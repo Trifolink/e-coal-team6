@@ -6,8 +6,8 @@
     <title>E-coal</title>
 </head>
 <body>
-    <h1>Je suis ta mere</h1>
+    <h1>Dishes on world food</h1>
 
-    <img src="https://images.bfmtv.com/5E67zRGTtNMCNSbGC5F84_QgfMI=/3x0:947x531/944x0/images/Wakfu-va-avoir-droit-a-une-saison-4-grace-a-ses-fans-371452.jpg" alt="oui">
+    <img src="https://resize.elle.fr/original/var/plain_site/storage/images/elle-a-table/les-dossiers-de-la-redaction/dossier-de-la-redac/plat-familial-sans-four/97674745-2-fre-FR/15-recettes-de-plats-familiaux-sans-four.jpg" alt="oui">
 </body>
 </html>
