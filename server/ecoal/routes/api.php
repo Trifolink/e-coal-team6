@@ -37,3 +37,4 @@ Route::group([
 
 Route::apiResource("articles", ArticleController::class);
 
+// Route::get('/articles/{article}', [ArticleController::class, 'Article']);
