@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\API\ArticleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +35,5 @@ Route::group([
 });
 
 
-// Route::apiResource("article", ArticleController::class);
+Route::apiResource("articles", ArticleController::class);
 
