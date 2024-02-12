@@ -33,4 +33,5 @@ Route::group([
 });
 
 
+// Route::apiResource("article", ArticleController::class);
 
