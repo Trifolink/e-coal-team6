@@ -24,7 +24,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        // Validation des données de la requête (à adapter selon vos besoins)
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
@@ -33,10 +32,15 @@ class ArticleController extends Controller
             'mediaURL' => 'nullable|url',
             'leadStory' => 'required|boolean',
             'tags' => 'required|array',
-            'tags.*' => 'exists:tags,id', // Vérifier que chaque tag existe en base de données
         ]);
     
-        // Création de l'article
+        $tagIds = [];
+        foreach ($validatedData['tags'] as $tagName) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+    
+            $tagIds[] = $tag->id;
+        }
+    
         $article = Article::create([
             'title' => $validatedData['title'],
             'content' => $validatedData['content'],
@@ -46,10 +50,8 @@ class ArticleController extends Controller
             'leadStory' => $validatedData['leadStory'],
         ]);
     
-        // Attachement des tags à l'article
-        $article->tags()->attach($validatedData['tags']);
+        $article->tags()->attach($tagIds);
     
-        // Retour de la réponse JSON
         return response()->json($article, 201);
     }
 
