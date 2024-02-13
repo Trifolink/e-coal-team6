@@ -22,9 +22,8 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-public function store(Request $request)
+    public function store(Request $request)
 {
-    // Validation des données de la requête (à adapter selon vos besoins)
     $validatedData = $request->validate([
         'title' => 'required|max:255',
         'content' => 'required',
@@ -33,25 +32,30 @@ public function store(Request $request)
         'mediaURL' => 'nullable|url',
         'leadStory' => 'required|boolean',
         'tags' => 'required|array',
-        'tags.*' => 'exists:tags,id', // Vérifier que chaque tag existe en base de données
     ]);
 
-    // Création de l'article
     $article = Article::create([
-        'title' => $validatedData['title'],
-        'content' => $validatedData['content'],
-        'thumbnailURL' => $validatedData['thumbnailURL'],
-        'mediaType' => $validatedData['mediaType'],
-        'mediaURL' => $validatedData['mediaURL'],
-        'leadStory' => $validatedData['leadStory'],
+        'title' => $request->input('title'),
+        'content' => $request->input('content'),
+        'thumbnailURL' => $request->input('thumbnailURL'),
+        'mediaType' => $request->input('mediaType'),
+        'mediaURL' => $request->input('mediaURL'),
+        'leadStory' => $request->input('leadStory'),
     ]);
+    
 
-    // Attachement des tags à l'article
-    $article->tags()->attach($validatedData['tags']);
+    $tagIds = [];
+    foreach ($validatedData['tags'] as $tagName) {
+        $tag = Tag::firstOrCreate(['name' => $tagName]);
 
-    // Retour de la réponse JSON
+        $tagIds[] = $tag->id;
+    }
+
+    $article->tags()->attach($tagIds);
+
     return response()->json($article, 201);
 }
+
 
     /**
      * Display the specified resource.
