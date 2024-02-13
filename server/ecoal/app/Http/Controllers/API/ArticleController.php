@@ -23,37 +23,39 @@ class ArticleController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-            'thumbnailURL' => 'required|url',
-            'mediaType' => 'nullable',
-            'mediaURL' => 'nullable|url',
-            'leadStory' => 'required|boolean',
-            'tags' => 'required|array',
-        ]);
+{
+    $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'content' => 'required',
+        'thumbnailURL' => 'required|url',
+        'mediaType' => 'nullable',
+        'mediaURL' => 'nullable|url',
+        'leadStory' => 'required|boolean',
+        'tags' => 'required|array',
+    ]);
+
+    $article = Article::create([
+        'title' => $request->input('title'),
+        'content' => $request->input('content'),
+        'thumbnailURL' => $request->input('thumbnailURL'),
+        'mediaType' => $request->input('mediaType'),
+        'mediaURL' => $request->input('mediaURL'),
+        'leadStory' => $request->input('leadStory'),
+    ]);
     
-        $tagIds = [];
-        foreach ($validatedData['tags'] as $tagName) {
-            $tag = Tag::firstOrCreate(['name' => $tagName]);
-    
-            $tagIds[] = $tag->id;
-        }
-    
-        $article = Article::create([
-            'title' => $validatedData['title'],
-            'content' => $validatedData['content'],
-            'thumbnailURL' => $validatedData['thumbnailURL'],
-            'mediaType' => $validatedData['mediaType'],
-            'mediaURL' => $validatedData['mediaURL'],
-            'leadStory' => $validatedData['leadStory'],
-        ]);
-    
-        $article->tags()->attach($tagIds);
-    
-        return response()->json($article, 201);
+
+    $tagIds = [];
+    foreach ($validatedData['tags'] as $tagName) {
+        $tag = Tag::firstOrCreate(['name' => $tagName]);
+
+        $tagIds[] = $tag->id;
     }
+
+    $article->tags()->attach($tagIds);
+
+    return response()->json($article, 201);
+}
+
 
     /**
      * Display the specified resource.
