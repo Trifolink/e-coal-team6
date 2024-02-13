@@ -1,5 +1,4 @@
 import styles from './Header.module.css';
-import 'boxicons';
 import logo from '../globalbites_logo.png';
 
 
