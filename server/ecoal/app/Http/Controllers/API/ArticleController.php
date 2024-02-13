@@ -13,7 +13,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::with('tags')->get();
         return response()->json($articles);
     }
 
@@ -30,6 +30,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        $article->load('tags');
         return response()->json($article);
     }
 
