@@ -10,14 +10,25 @@ function Home() {
     useEffect(() => {
         // Fonction pour récupérer les articles depuis votre API
         const fetchArticles = async () => {
+            
+            // try {
+            //     const response = await axios.get('http://127.0.0.1:8000/api/articles');
+            //     setArticles(response.data);
+            // } catch (error) {
+            //     console.error('Erreur lors de la récupération des articles :', error);
+            // }
+
             try {
-                // Effectuez une requête HTTP pour récupérer les articles depuis votre API
                 const response = await axios.get('http://127.0.0.1:8000/api/articles');
-                // Mettez à jour l'état local avec les articles récupérés
-                setArticles(response.data);
+                const leadStoryArticles = response.data.filter(articles => articles.leadStory == true);
+                console.log(leadStoryArticles); 
+                setArticles(leadStoryArticles);
             } catch (error) {
                 console.error('Erreur lors de la récupération des articles :', error);
             }
+            
+
+
         };
 
         // Appelez la fonction pour récupérer les articles
@@ -27,13 +38,11 @@ function Home() {
     return (
         <div className={styles.home}>
             <h1>Liste des articles</h1>
-            {/* Affichez les articles récupérés */}
             <div className={styles.articleList}>
                 {articles.map(article => (
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
                         <p>{article.content}</p>
-                        {/* Affichez d'autres informations sur l'article si nécessaire */}
                     </div>
                 ))}
             </div>
