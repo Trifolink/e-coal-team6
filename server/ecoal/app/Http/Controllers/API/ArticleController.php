@@ -43,16 +43,12 @@ class ArticleController extends Controller
         'leadStory' => $request->input('leadStory'),
     ]);
     
-
-    $tagIds = [];
     foreach ($validatedData['tags'] as $tagName) {
         $tag = Tag::firstOrCreate(['name' => $tagName]);
-
-        $tagIds[] = $tag->id;
+        $article->tags()->attach($tag->id);        
     }
 
-    $article->tags()->attach($tagIds);
-
+    
     return response()->json($article, 201);
 }
 
@@ -71,7 +67,28 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'thumbnailURL' => 'required|url',
+            'mediaType' => 'nullable',
+            'mediaURL' => 'nullable|url',
+            'leadStory' => 'required|boolean',
+            'tags' => 'required|array',
+        ]);
+    
+        $article->update([
+            'title'=> $request->input('title'),
+            'content'=> $request->input('content'),
+            'thumbnailURL'=> $request->input('thumbnailURL'),
+            'mediaType'=> $request->input('mediaType'),
+            'mediaURL'=> $request->input('mediaURL'),
+            'leadStory'=> $request->input('leadStory'),
+        ]);
+    
+        // $article->tags()->sync($validatedData['tags']);
+    
+        return response()->json($article);
     }
 
     /**
@@ -79,6 +96,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->tags()->detach();
+        $article->delete();
     }
 }
