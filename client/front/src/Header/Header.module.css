@@ -1,0 +1,25 @@
+.header {
+    background-color: #FFBF5E;
+    color: #FF6B6B;
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.logo {
+    width: 20%;
+    padding-left: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.lefth {
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 50%;
+}
+
