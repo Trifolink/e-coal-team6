@@ -6,6 +6,15 @@
     text-align: center;
 }
 
+.fond {
+    background-color: #FFE484;
+    padding-bottom: 10px;
+    display: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 .logo {
     width: 20%;
     padding-left: 10px;

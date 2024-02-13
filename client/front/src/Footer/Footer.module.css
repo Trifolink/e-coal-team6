@@ -3,6 +3,11 @@
     color: #FF6B6B;
 }
 
+.fond {
+    background-color: #FFE484;
+    padding-top: 10px;
+}
+
 .newsletter {
     display:flex;
     flex-direction: column;
