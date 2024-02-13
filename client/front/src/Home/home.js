@@ -3,12 +3,9 @@ import { useState, useEffect } from 'react'
 import axios from "axios"
 
 function Home() {
-    // Utilisez l'état local pour stocker les articles récupérés
     const [articles, setArticles] = useState([]);
 
-    // Utilisez useEffect pour effectuer une action (comme récupérer des articles) lorsque le composant est monté
     useEffect(() => {
-        // Fonction pour récupérer les articles depuis votre API
         const fetchArticles = async () => {
             
             // try {
@@ -31,9 +28,8 @@ function Home() {
 
         };
 
-        // Appelez la fonction pour récupérer les articles
         fetchArticles();
-    }, []); // Le tableau vide en tant que deuxième argument signifie que cette fonction s'exécute une fois lors du montage initial du composant
+    }, []); 
 
     return (
         <div className={styles.home}>
