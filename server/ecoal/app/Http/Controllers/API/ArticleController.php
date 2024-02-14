@@ -67,6 +67,8 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+        if (Auth::check()) {
+            
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
@@ -89,6 +91,11 @@ class ArticleController extends Controller
         // $article->tags()->sync($validatedData['tags']);
     
         return response()->json($article);
+
+        } else {
+            return response()->json(['error' => 'You are not connected'], 401);
+        }
+
     }
 
     /**
