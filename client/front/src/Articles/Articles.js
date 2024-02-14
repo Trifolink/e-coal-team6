@@ -29,6 +29,7 @@ function Articles() {
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
                         <p>{article.content}</p>
+                        <img src={article.mediaURL}></img>
                     </div>
                 ))}
             </div>
