@@ -105,5 +105,6 @@ class ArticleController extends Controller
     {
         $article->tags()->detach();
         $article->delete();
+        return response()->noContent();
     }
 }
