@@ -6,6 +6,8 @@
 .fond {
     background-color: #FFE484;
     padding-top: 10px;
+    position: relative;
+    width: 100%;
 }
 
 .newsletter {
