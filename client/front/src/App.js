@@ -9,26 +9,11 @@ import {Route, Link, Routes} from "react-router-dom";
 function App() {
   return (
     <div className={styles.App}>
-      <Header/>
-      {/* <br></br> */}
-
-
-
-      <nav>
-    <Link to="/">Home</Link>
-    <Link to="/articles">Articles</Link>
-  </nav>
-
-  <Routes>
-    <Route exact={true} path="/" element={<Home/>}/>
-    <Route exact={true} path="/articles" element={<Articles />} />
-  </Routes>
-
-
-
-
-
-      {/* <Home></Home> */}
+      <Header />
+      <Routes>
+        <Route exact={true} path="/" element={<Home />} />
+        <Route exact={true} path="/articles" element={<Articles />} />
+      </Routes>
       <Footer/>
     </div>
   );
