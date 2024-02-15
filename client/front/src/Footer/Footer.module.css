@@ -1,12 +1,14 @@
 .footer {
     background-color: #FFBF5E;
     color: #FF6B6B;
-    border-top: solid 10px #FFE484;
-    padding-top: 10px;
+    border-top: solid 15px #FFE484;
+    border-radius: 20px 20px 0 0 ;
+    /* padding-top: 10px; */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+
 }
 
 .newsletter {
@@ -14,7 +16,6 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    padding-bottom: 10px;
 
 }
 
@@ -45,3 +46,7 @@
 .arrow {
     width: 50%;
 }
+
+/* .espace {
+    height: 50px;
+} */
