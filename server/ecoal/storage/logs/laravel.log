@@ -1941,3 +1941,27 @@
 #32 {main}
 >>>>>>> 73ff743d5d2afbd32342064a595cde74c095f45b
 "} 
+[2024-02-15 15:12:19] local.ERROR: Command "db:seed7" is not defined.
+
+Did you mean one of these?
+    db
+    db:monitor
+    db:seed
+    db:show
+    db:table
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:seed7\" is not defined.
+
+Did you mean one of these?
+    db
+    db:monitor
+    db:seed
+    db:show
+    db:table
+    db:wipe at C:\\Users\\natha\\OneDrive\\Bureau\\e-coal-team6\\e-coal-team6\\server\\ecoal\\vendor\\symfony\\console\\Application.php:737)
+[stacktrace]
+#0 C:\\Users\\natha\\OneDrive\\Bureau\\e-coal-team6\\e-coal-team6\\server\\ecoal\\vendor\\symfony\\console\\Application.php(266): Symfony\\Component\\Console\\Application->find('db:seed7')
+#1 C:\\Users\\natha\\OneDrive\\Bureau\\e-coal-team6\\e-coal-team6\\server\\ecoal\\vendor\\symfony\\console\\Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\natha\\OneDrive\\Bureau\\e-coal-team6\\e-coal-team6\\server\\ecoal\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(201): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\natha\\OneDrive\\Bureau\\e-coal-team6\\e-coal-team6\\server\\ecoal\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

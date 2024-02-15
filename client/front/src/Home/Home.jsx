@@ -1,6 +1,9 @@
-import styles from './Home.modules.css'
+import styles from './Home.module.css'
 import { useState, useEffect } from 'react'
 import axios from "axios"
+import backgr from '../search.png'
+// import Listes from '../Listes/Listes'
+import Articles from '../Articles/Article'
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -33,7 +36,11 @@ function Home() {
 
     return (
         <div className={styles.home}>
-            <h1>Liste des articles</h1>
+            <div className={styles.box}>
+            <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
+        <input className={styles.searchbar} type="text" placeholder="Search"/>
+        </div>
+  <h1 className={styles.categories}>Recent Articles</h1>
             <div className={styles.articleList}>
                 {articles.map(article => (
                     <div key={article.id} className={styles.article}>
@@ -43,6 +50,8 @@ function Home() {
                     </div>
                 ))}
             </div>
+        </div>
+            <Articles/>
         </div>
     );
 }
