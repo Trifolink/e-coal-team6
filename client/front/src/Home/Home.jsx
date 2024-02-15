@@ -52,7 +52,7 @@ function Home() {
             <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
         <input className={styles.searchbar}
                 type="text"
-                placeholder="Rechercher"
+                placeholder="Search"
                 value={searchValue}
                 onChange={handleSearchChange}
             />
