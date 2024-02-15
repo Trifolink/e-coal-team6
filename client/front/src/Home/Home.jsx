@@ -62,8 +62,8 @@ function Home() {
             {filteredArticles.map(article => (
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
-                        <p>{article.content}</p>
-                        <iframe width="560" height="315" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        {/* <p>{article.content}</p> */}
+                        <iframe width="250" height="150" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 ))}
             </div>
