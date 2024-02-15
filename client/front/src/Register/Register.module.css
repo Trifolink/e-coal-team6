@@ -1,0 +1,45 @@
+.register {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rgsbtn {
+    background-color: #FF6B6B;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-style: Khand;
+}
+
+.text {
+    padding: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 10px;
+    border-bottom: solid black 1px;
+}
+
+.box {
+    border: solid 3px lightgray;
+    background-color: white;
+    border-radius: 50px;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    width:70%;
+    padding: 15px;
+    padding-bottom: 20px;
+}
