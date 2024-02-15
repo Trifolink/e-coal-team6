@@ -1,11 +1,12 @@
 .footer {
     background-color: #FFBF5E;
     color: #FF6B6B;
-}
-
-.fond {
-    background-color: #FFE484;
+    border-top: solid 10px #FFE484;
     padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .newsletter {
@@ -13,7 +14,8 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    padding-top: 10px;
 }
 
 .subscribe {

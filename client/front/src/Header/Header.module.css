@@ -4,12 +4,8 @@
     display:flex;
     justify-content: space-between;
     text-align: center;
-}
-
-.fond {
-    background-color: #FFE484;
-    padding-bottom: 10px;
-    display: fixed;
+    border-bottom: solid 10px #FFE484;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

@@ -1,0 +1,39 @@
+.articles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1em;
+    height: 100%; 
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    margin-bottom: 80px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    border: solid 3px lightgray;
+    background-color: white;
+    border-radius: 50px;
+    margin-top: 80px;
+}
+
+.title {
+    text-align: center;
+    width: 80%;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+}
+
+.image {
+    width: 70%;
+    border-radius: 20px;
+    padding-top: 5px;
+}
