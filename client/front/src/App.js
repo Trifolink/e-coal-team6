@@ -8,6 +8,7 @@ import Register from './Register/Register.jsx';
 import Home from './Home/home';
 import Articles from './Articles/Articles';
 import NewArticle from './AjoutArticle/AjoutArticle';
+import Logout from './Logout/Logout';
 import {Route, Link, Routes} from "react-router-dom";
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
         <Route exact={true} path="/" element={<Home/>}/>
         <Route exact={true} path="/articles" element={<Articles/>} />
         <Route exact={true} path="/NewArticle" element={<NewArticle/>} />
+        <Route exact={true} path="/Login" element={<Login/>} />
+        <Route exact={true} path="/Register" element={<Register/>} />
+        <Route exact={true} path="/Logout" element={<Logout/>} />
       </Routes>
       <Footer/>
     </div>

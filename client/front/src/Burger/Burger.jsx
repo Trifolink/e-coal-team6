@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Burger.module.css';
 
+import Logout from '../Logout/Logout';
+
 import Home from '../Home/home';
 import Articles from '../Articles/Articles';
 import {Route, Link, Routes} from "react-router-dom";
@@ -8,12 +10,13 @@ import {Route, Link, Routes} from "react-router-dom";
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [connected, setConnected] = useState(localStorage.getItem("user")?true:false)
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-
-
+  
 
   return (
 
@@ -30,6 +33,9 @@ const BurgerMenu = () => {
     <Link to="/">Home</Link>
     <Link to="/articles">Articles</Link>
     <Link to="/NewArticle">New Article</Link>
+    <Link to="/Login">Login</Link>
+    <Link to="/Register">Register</Link>
+    {connected && <Logout setConnected={setConnected} />}
   </nav>
 
   
