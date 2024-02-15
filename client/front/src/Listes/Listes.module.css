@@ -1,0 +1,13 @@
+.box {
+    border: solid 3px lightgray;
+    background-color: white;
+    border-radius: 50px;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    width:70%;
+    padding: 15px;
+    padding-bottom: 20px;
+    margin-top: 80px;
+}
