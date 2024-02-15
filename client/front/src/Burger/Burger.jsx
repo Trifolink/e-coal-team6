@@ -25,8 +25,8 @@ const BurgerMenu = () => {
     {isOpen && (
         <nav className={`${styles.navbug} ${isOpen ? styles.open : ''}`}>
           <Link to="/">Home</Link>
-          <Link to="/articles">Articles</Link>
-          <Link to="/NewArticle">New Article</Link>
+          <Link to="/articles">Dishes</Link>
+          <Link to="/NewArticle">New dishes</Link>
           <Link to="/Login">Login</Link>
           <Link to="/Register">Register</Link>
         </nav>
