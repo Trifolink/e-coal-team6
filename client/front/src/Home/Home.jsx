@@ -4,6 +4,7 @@ import axios from "axios"
 import backgr from '../search.png'
 // import Listes from '../Listes/Listes'
 import Articles from '../Articles/Article'
+import background from '../bg.jpg'
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -47,7 +48,7 @@ function Home() {
     };
 
     return (
-        <div className={styles.home}>
+        <div className={styles.home} style={{ backgroundImage:`url(${background})` }}>
             <div className={styles.box}>
             <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
         <input className={styles.searchbar}
