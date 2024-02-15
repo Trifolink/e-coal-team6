@@ -67,7 +67,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        if (Auth::check()) {
+        // if (Auth::check()) {
             
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -92,9 +92,9 @@ class ArticleController extends Controller
     
         return response()->json($article);
 
-        } else {
-            return response()->json(['error' => 'You are not connected'], 401);
-        }
+        // } else {
+        //     return response()->json(['error' => 'You are not connected'], 401);
+        // }
 
     }
 
