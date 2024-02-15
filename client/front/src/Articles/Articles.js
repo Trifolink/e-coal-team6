@@ -1,4 +1,4 @@
-import styles from './Articles.modules.css'
+import styles from './Article.module.css'
 import { useState, useEffect } from 'react'
 import axios from "axios"
 
@@ -29,7 +29,7 @@ function Articles() {
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
                         <p>{article.content}</p>
-                        <img src={article.thumbnailURL}></img>
+                        <img  className={styles.image} src={article.thumbnailURL}></img>
                     </div>
                 ))}
             </div>

@@ -3,7 +3,7 @@ import styles from './Burger.module.css';
 
 import Logout from '../Logout/Logout';
 
-import Home from '../Home/home';
+import Home from '../Home/Home';
 import Articles from '../Articles/Articles';
 import {Route, Link, Routes} from "react-router-dom";
 

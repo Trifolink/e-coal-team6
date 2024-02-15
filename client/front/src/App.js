@@ -6,7 +6,7 @@ import Login from './Login/Login';
 import Register from './Register/Register.jsx';
 import Listes from './Listes/Listes';
 
-import Home from './Home/home';
+import Home from './Home/Home';
 import Articles from './Articles/Articles';
 import NewArticle from './AjoutArticle/AjoutArticle';
 import Logout from './Logout/Logout';
