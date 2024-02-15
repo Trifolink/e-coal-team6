@@ -1,6 +1,9 @@
-import styles from './Home.modules.css'
+import styles from './Home.module.css'
 import { useState, useEffect } from 'react'
 import axios from "axios"
+import backgr from '../search.png'
+import Listes from '../Listes/Listes'
+import Articles from '../Articles/Articles.js'
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -33,16 +36,23 @@ function Home() {
 
     return (
         <div className={styles.home}>
-            <h1>Liste des articles</h1>
+            <div className={styles.box}>
+            <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
+        <input className={styles.searchbar} type="text" placeholder="Search"/>
+        </div>
+  <h1 className={styles.categories}>Recent Articles</h1>
             <div className={styles.articleList}>
                 {articles.map(article => (
                     <div key={article.id} className={styles.article}>
-                        <h2>{article.title}</h2>
-                        <p>{article.content}</p>
-                        <iframe width="560" height="315" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <img className={styles.image} src={article.mediaURL}></img>
+                        <h2 className={styles.title}>{article.title}</h2>
                     </div>
+                    
                 ))}
+                
             </div>
+            <Articles/>
+        </div>
         </div>
     );
 }
