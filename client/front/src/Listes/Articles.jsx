@@ -34,7 +34,7 @@ function ArticlesList() {
         <div className={styles.articles} style={{ backgroundImage:`url(${background})` }}>
             <div className={styles.box}>
             <h1 className={styles.title}>Liste des articles</h1>
-            <input
+            <input className={styles.seachbar}
                 type="text"
                 placeholder="Search"
                 value={searchValue}
