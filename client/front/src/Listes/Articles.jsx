@@ -33,7 +33,7 @@ function ArticlesList() {
     return (
         <div className={styles.articles} style={{ backgroundImage:`url(${background})` }}>
             <div className={styles.box}>
-            <h1 className={styles.title}>List of articles</h1>
+            <h1 className={styles.title}>Dishes list</h1>
             <input className={styles.seachbar}
                 type="text"
                 placeholder="Search"
