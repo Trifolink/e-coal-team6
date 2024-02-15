@@ -6,8 +6,10 @@ function NewArticle() {
     <div className={styles.ajout} style={{ backgroundImage:`url(${background})` }}>
         <div className={styles.box}>
             <h1 className={styles.title}>New Article</h1>
+        <input className={styles.text} type="text" placeholder='Thumbnail URL'></input>
         <input className={styles.text} type="text" placeholder='Title'></input>
         <textarea className={styles.text} type="textarea" placeholder='Content...'></textarea>
+        <textarea className={styles.text} type="textarea" placeholder='Tags'></textarea>
         <a type='submit' className={styles.ajtbtn}>Submit</a>
         </div>
     </div>

@@ -9,7 +9,6 @@ import {Route, Link, Routes} from "react-router-dom";
 function Header() {
     
   return (
-    <div className={styles.fond}>
         <div className={styles.header}>
         <div className={styles.lefth}>
         <Link to="/"><img className={styles.logo} src={logo}/></Link>
@@ -17,7 +16,6 @@ function Header() {
 
         </div>
         <Burger/>
-        </div>
 
     </div>
   );
