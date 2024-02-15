@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
             A Canadian symbol
             Over the decades, poutine has become much more than a simple dish; it has become a symbol of Canadian cuisine and the spirit of conviviality that reigns throughout the country. Whether you're visiting Canada or have lived here for years, a mouthful of poutine instantly transports you to the warm, welcoming atmosphere of the country's bustling streets.
             ",
-            "thumbnailURL" => "https://www.196flavors.com/wp-content/uploads/2022/04/Poutine-FP.jpg",
+            "thumbnailURL" => "https://www.tastingtable.com/img/gallery/the-varied-history-of-poutine-canadas-unofficial-national-food/l-intro-1663946811.jpg",
             "mediaType" => "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png",
             "mediaURL" => "https://www.youtube.com/embed/auUiA7755Mo?si=_LqtDUR-HvfrRyIZ",
             "leadStory" => false
@@ -148,7 +148,7 @@ class DatabaseSeeder extends Seeder
             Conclusion
             In conclusion, Kouign-Amann is much more than a simple pastry; it's a symbol of Breton culinary art and the passion of the artisan bakers who have been preparing it with care for generations. Its exquisite flavor and indulgent character make it a true icon of French gastronomy, and a not-to-be-missed taste experience for all lovers of sweets and gourmet delights.
             ",
-            "thumbnailURL" => "https://cdn.chefclub.tools/uploads/recipes/cover-thumbnail/b149e0b8-eabf-45dc-828d-a72cccdba490.jpg",
+            "thumbnailURL" => "https://www.valeursactuelles.com/assets/uploads/2015/08/kouign_amann_patisserie_bretagne_dr.jpg",
             "mediaType" => "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Proposed_flag_of_R%C3%A9union_%28VAR%29.svg/1200px-Proposed_flag_of_R%C3%A9union_%28VAR%29.svg.png",
             "mediaURL" => "https://www.youtube.com/embed/-CiS6LSNGfI?si=Vt9Imo6eqx43iSZM",
             "leadStory" => true
