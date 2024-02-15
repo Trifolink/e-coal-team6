@@ -25,8 +25,8 @@ const BurgerMenu = () => {
     </a>
     
   {isOpen && (
-  <nav className="menu-items">
-    <Link to="/">Home</Link>
+  <nav >
+    <Link className="menu" to="/">Home</Link>
     <Link to="/articles">Articles</Link>
     <Link to="/NewArticle">New Article</Link>
     <Link to="/Login">Login</Link>
