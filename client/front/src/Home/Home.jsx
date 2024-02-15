@@ -34,15 +34,32 @@ function Home() {
         fetchArticles();
     }, []); 
 
+    const [searchValue, setSearchValue] = useState('');
+
+
+    const filteredArticles = articles.filter(article => {
+        return article.title.toLowerCase().includes(searchValue.toLowerCase());
+    });
+    
+
+    const handleSearchChange = event => {
+        setSearchValue(event.target.value);
+    };
+
     return (
         <div className={styles.home}>
             <div className={styles.box}>
             <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
-        <input className={styles.searchbar} type="text" placeholder="Search"/>
+        <input className={styles.searchbar}
+                type="text"
+                placeholder="Rechercher"
+                value={searchValue}
+                onChange={handleSearchChange}
+            />
         </div>
   <h1 className={styles.categories}>Recent Articles</h1>
             <div className={styles.articleList}>
-                {articles.map(article => (
+            {filteredArticles.map(article => (
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
                         <p>{article.content}</p>
