@@ -13,7 +13,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']); 
+        $this->middleware('auth')->except(['index']); 
     }
 
 
@@ -31,6 +31,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
 {
+    // if (Auth::check()) {
     $validatedData = $request->validate([
         'title' => 'required|max:255',
         'content' => 'required',
@@ -57,6 +58,10 @@ class ArticleController extends Controller
 
     
     return response()->json($article, 201);
+
+// } else {
+//     return response()->json(['error' => 'You are not connected'], 401);
+// }
 }
 
 
@@ -74,7 +79,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        if (Auth::check()) {
+        // if (Auth::check()) {
             
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -99,9 +104,9 @@ class ArticleController extends Controller
     
         return response()->json($article);
 
-        } else {
-            return response()->json(['error' => 'You are not connected'], 401);
-        }
+        // } else {
+        //     return response()->json(['error' => 'You are not connected'], 401);
+        // }
 
     }
 
