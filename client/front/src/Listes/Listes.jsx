@@ -34,7 +34,7 @@ function Listes() {
 
   return (
     <div className={styles.listes}>
-        <div className={styles.box}>
+        <div className={styles.box}></div>
       <h1>All the articles</h1>
       <div>
         {/* Afficher la liste des articles */}
@@ -43,7 +43,6 @@ function Listes() {
             <li key={article.id}>{article.title}</li>
           ))}
         </ul>
-      </div>
       </div>
     </div>
   );
