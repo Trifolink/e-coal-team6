@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
             A Canadian symbol
             Over the decades, poutine has become much more than a simple dish; it has become a symbol of Canadian cuisine and the spirit of conviviality that reigns throughout the country. Whether you're visiting Canada or have lived here for years, a mouthful of poutine instantly transports you to the warm, welcoming atmosphere of the country's bustling streets.
             ",
-            "thumbnailURL" => "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcuisine.journaldesfemmes.fr%2Frecette%2F3092033-la-fameuse-poutine-canadienne&psig=AOvVaw2fptxFnosaEITiItP8SyfL&ust=1708078127580000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjQyIGNrYQDFQAAAAAdAAAAABAE",
+            "thumbnailURL" => "https://www.196flavors.com/wp-content/uploads/2022/04/Poutine-FP.jpg",
             "mediaType" => "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png",
             "mediaURL" => "https://www.youtube.com/embed/auUiA7755Mo?si=_LqtDUR-HvfrRyIZ",
             "leadStory" => false
