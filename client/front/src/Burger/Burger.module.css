@@ -1,5 +1,6 @@
 .burgermenu {
   position: fixed;
+  flex-direction: column;
   background-color: white;
   width: 36px;
   height: 30px;
