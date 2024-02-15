@@ -29,6 +29,7 @@ const BurgerMenu = () => {
       <nav>
     <Link to="/">Home</Link>
     <Link to="/articles">Articles</Link>
+    <Link to="/NewArticle">New Article</Link>
   </nav>
 
   

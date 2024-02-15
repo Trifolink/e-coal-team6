@@ -1,7 +1,7 @@
 import styles from './AjoutArticle.module.css';
 import background from '../bg.jpg'
 
-function AjoutArticle() {
+function NewArticle() {
   return (
     <div className={styles.ajout} style={{ backgroundImage:`url(${background})` }}>
         <div className={styles.box}>
@@ -14,4 +14,4 @@ function AjoutArticle() {
   );
 }
 
-export default AjoutArticle;
+export default NewArticle;
