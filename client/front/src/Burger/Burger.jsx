@@ -19,17 +19,13 @@ const BurgerMenu = () => {
   
 
   return (
-
-    
-    
-    <div className="burger-menu">
-      <a className={styles.burgerIcon} onClick={toggleMenu}>
+  <div className="burger-menu">
+    <a className={styles.burgerIcon} onClick={toggleMenu}>
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAPNJREFUaEPtmEEOgzAMBMl74RF9BLw3VdVjFWkrgx07wzmJvTt2MLRtsactpndDcHXiEIZwMQco6WJAf+RAGMLFHKCkiwHl0pJLuu97n5l+uy5Ji7ToIxTBk+GG8AAIJT1Zpd6ejkz49shBByI4yHi3sBB2szooEIRHxvfjeAVBkcK285TykwkzS0u++y1ilmaW/jqg9/Bql5ZfNz4bSSb8bBp+pyPYz+uYSBCO8d0vKoSHHw/8iPcrQyUSszSz9L+z9Go9rPRRhjW8ljJQsuQIYYt7GfZCOAMlS44QtriXYS+EM1Cy5Ahhi3sZ9kI4AyVLjm8JxEA98CGmBQAAAABJRU5ErkJggg==" />
-      </a>
-      
-      {isOpen && (
-        <div className="menu-items">
-      <nav>
+    </a>
+    
+  {isOpen && (
+  <nav className="menu-items">
     <Link to="/">Home</Link>
     <Link to="/articles">Articles</Link>
     <Link to="/NewArticle">New Article</Link>
@@ -38,11 +34,8 @@ const BurgerMenu = () => {
     {connected && <Logout setConnected={setConnected} />}
   </nav>
 
-  
-
-        </div>
-      )}
-    </div>
+  )}
+  </div>
     
   );
 };
