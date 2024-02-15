@@ -33,3 +33,14 @@
 a {
     padding: 0;
 }
+
+
+.arrow {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+}
+
+.arrow a img {
+    width: 120%;
+}
