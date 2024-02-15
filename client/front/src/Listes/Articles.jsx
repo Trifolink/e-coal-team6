@@ -25,19 +25,21 @@ function ArticlesList() {
 
     return (
         <div className={styles.home}>
-    <Link to="/article">
+  
 
                 <h1>Liste des articles</h1>
                 <div className={styles.articleList}>
                     {articles.map(article => (
                         <div key={article.id} className={styles.article}>
+                            <Link to={`/article/${article.id}`}>
                             <h2>{article.title}</h2>
                             <p>{article.content}</p>
                             <img src={article.thumbnailURL}></img>
+                            </Link>
                         </div>
                     ))}
                 </div>
-            </Link>
+           
         </div>
     );
 }

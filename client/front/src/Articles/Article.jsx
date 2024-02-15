@@ -1,19 +1,48 @@
 import styles from './Articles.module.css';
 import background from '../bg.jpg'
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import  axios  from 'axios';
 
-function Article() {
-    let title = 'titre';
-    let content = 'Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsu sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-    let thumbnailJPG = '';
-    let mediaURL= 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/MargaretCafe_PasteisDeNata.JPG/1200px-MargaretCafe_PasteisDeNata.JPG';
+function Article(props) {
+  let params = useParams()
+   
+    const [article, setArticle] = useState(null);
+
+    useEffect(() => {
+        const fetchArticles = async () => {
+            
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/articles/'+params.id);
+                setArticle(response.data);
+            } catch (error) {
+                console.error('Erreur lors de la récupération des articles :', error);
+            }
+
+        };
+
+        fetchArticles();
+    }, []); 
+
+
+
+
+
+
+
+    if (!article)
+    return <> </>
+
+
 
   return (
     <div className={styles.articles} style={{ backgroundImage:`url(${background})` }}>
+        affichage de l'article {params.id}
         <div className={styles.box}>
-        <img className={styles.image} src={thumbnailJPG}/>
-        <img className={styles.image} src={mediaURL}/>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.content}>{content}</p>
+        <img className={styles.image} src={article.thumbnailJPG}/>
+        <img className={styles.image} src={article.mediaURL}/>
+        <h1 className={styles.title}>{article.title}</h1>
+        <p className={styles.content}>{article.content}</p>
     </div>
     </div>
   );

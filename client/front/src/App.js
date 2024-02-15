@@ -28,7 +28,7 @@ function App() {
         <Route exact={true} path="/Login" element={<Login/>} />
         <Route exact={true} path="/Register" element={<Register/>} />
         <Route exact={true} path="/Logout" element={<Logout/>} />
-        <Route exact={true} path="/article" element={<Article/>} />
+        <Route exact={true} path="/article/:id" element={<Article/>} />
       </Routes>
       <Footer/>
     </div>
