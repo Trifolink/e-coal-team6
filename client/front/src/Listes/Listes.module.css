@@ -46,4 +46,6 @@ link {
 
 .seachbar {
     margin-bottom: 30px;
+    border-radius: 20px;
+    padding: 2%;
 }
