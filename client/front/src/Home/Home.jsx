@@ -4,6 +4,7 @@ import axios from "axios"
 import backgr from '../search.png'
 // import Listes from '../Listes/Listes'
 import Articles from '../Articles/Article'
+import background from '../bg.jpg'
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -47,7 +48,7 @@ function Home() {
     };
 
     return (
-        <div className={styles.home}>
+        <div className={styles.home} style={{ backgroundImage:`url(${background})` }}>
             <div className={styles.box}>
             <div className={styles.searchbg} style={{ backgroundImage:`url(${backgr})` }}>
         <input className={styles.searchbar}
@@ -64,6 +65,8 @@ function Home() {
                         <h2>{article.title}</h2>
                         {/* <p>{article.content}</p> */}
                         <iframe width="250" height="150" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div className={styles.espace}>&nbsp;</div>
+                    
                     </div>
                 ))}
             </div>

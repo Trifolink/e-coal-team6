@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './Listes.module.css';
+import background from '../bg.jpg'
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
@@ -30,10 +31,10 @@ function ArticlesList() {
     };
 
     return (
-        <div className={styles.articles}>
+        <div className={styles.articles} style={{ backgroundImage:`url(${background})` }}>
             <div className={styles.box}>
-            <h1>Liste des articles</h1>
-            <input
+            <h1 className={styles.title}>Liste des articles</h1>
+            <input className={styles.seachbar}
                 type="text"
                 placeholder="Search"
                 value={searchValue}
@@ -44,7 +45,7 @@ function ArticlesList() {
                     <div key={article.id} className={styles.article}>
                         <Link to={`/article/${article.id}`}>
                         <img className={styles.image} src={article.thumbnailURL} alt={article.title} />
-                            <h2>{article.title}</h2>
+                            <h2 className={styles.text}>{article.title}</h2>
                         </Link>
                     </div>
                 ))}

@@ -1,3 +1,9 @@
+.articles {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .box {
     display:flex;
     justify-content: space-between;
@@ -8,6 +14,8 @@
     padding-bottom: 20px;
     margin-top: 80px;
     margin: 0 auto;
+    background-color: white;
+    border: solid 3px lightgray;
 }
 
 h2 {
@@ -16,14 +24,25 @@ h2 {
 }
 
 .image {
-    width: 20%;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.text {
+    text-decoration: none;
+    border-bottom: solid 3px lightgray;
+    padding: 5px;
+    width: 100%;
 }
 
 link {
     text-decoration: none;
 }
 
+.title {
+    padding-top: 80px;
+}
 
-input {
-    margin-top: 100px;
+.seachbar {
+    margin-bottom: 30px;
 }
