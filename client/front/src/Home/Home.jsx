@@ -2,8 +2,8 @@ import styles from './Home.module.css'
 import { useState, useEffect } from 'react'
 import axios from "axios"
 import backgr from '../search.png'
-import Listes from '../Listes/Listes'
-import Articles from '../Articles/Articles.js'
+// import Listes from '../Listes/Listes'
+import Articles from '../Articles/Article'
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -44,15 +44,14 @@ function Home() {
             <div className={styles.articleList}>
                 {articles.map(article => (
                     <div key={article.id} className={styles.article}>
-                        <img className={styles.image} src={article.mediaURL}></img>
-                        <h2 className={styles.title}>{article.title}</h2>
+                        <h2>{article.title}</h2>
+                        <p>{article.content}</p>
+                        <iframe width="560" height="315" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    
                 ))}
-                
             </div>
-            <Articles/>
         </div>
+            <Articles/>
         </div>
     );
 }
