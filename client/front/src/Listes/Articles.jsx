@@ -21,16 +21,9 @@ function ArticlesList() {
     }, []);
 
     const filteredArticles = articles.filter(article => {
-        // Filtre par titre
-        if (article.title.toLowerCase().includes(searchValue.toLowerCase())) {
-            return true;
-        }
-        // Filtre par tags
-        if (article.tags.some(tag => tag.toLowerCase().includes(searchValue.toLowerCase()))) {
-            return true;
-        }
-        return false;
+        return article.title.toLowerCase().includes(searchValue.toLowerCase());
     });
+    
 
     const handleSearchChange = event => {
         setSearchValue(event.target.value);
