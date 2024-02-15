@@ -30,9 +30,10 @@ h2 {
 
 .text {
     text-decoration: none;
-    border-bottom: solid 3px lightgray;
+    border-bottom: solid 3px rgb(122, 122, 122);
     padding: 5px;
     width: 100%;
+
 }
 
 link {

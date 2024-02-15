@@ -37,11 +37,13 @@ function Article(props) {
 
   return (
     <div className={styles.articles} style={{ backgroundImage:`url(${background})` }}>
-        affichage de l'article {params.id}
+        {/* affichage de l'article {params.id} */}
         <div className={styles.box}>
-        <img className={styles.image} src={article.thumbnailJPG}/>
-        <img className={styles.image} src={article.mediaURL}/>
+        <img className={styles.image} src={article.thumbnailURL}/>
+
         <h1 className={styles.title}>{article.title}</h1>
+        <iframe className={styles.video} width="250" height="150" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
         <p className={styles.content}>{article.content}</p>
     </div>
     </div>
