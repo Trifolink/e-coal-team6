@@ -13,7 +13,12 @@ function Article(props) {
         const fetchArticles = async () => {
             
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/articles/'+params.id);
+              const token = JSON.parse(localStorage.getItem("user")).access_token;
+              console.log('Bearer '+token)
+                const response = await axios.get(
+                  'http://localhost:8000/api/articles/'+params.id,
+                  {headers:{Authorization: 'Bearer '+token}}
+                  );
                 setArticle(response.data);
             } catch (error) {
                 console.error('Erreur lors de la récupération des articles :', error);
@@ -23,11 +28,6 @@ function Article(props) {
 
         fetchArticles();
     }, []); 
-
-
-
-
-
 
 
     if (!article)
@@ -42,7 +42,7 @@ function Article(props) {
         <img className={styles.image} src={article.thumbnailURL}/>
 
         <h1 className={styles.title}>{article.title}</h1>
-        <iframe className={styles.video} width="250" height="150" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe className={styles.video} width="250" height="150" src={article.mediaURL} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullscreen></iframe>
 
         <p className={styles.content}>{article.content}</p>
     </div>
