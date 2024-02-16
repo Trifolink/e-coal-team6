@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
 
         // Les articles
         $article1 = Article::create([
-            "title" => "Pastel de nata from Spain",
+            "title" => "Pastel de nata from Portugal",
             "content" => "Discover the Portuguese delicacy: Pastéis de Nata
 
             If you've ever had the chance to wander the cobbled streets of Lisbon or Porto, you've probably been drawn to the tantalizing aroma emanating from the windows of cafés and patisseries. One of Portugal's most emblematic delicacies is undoubtedly Pastéis de Nata, little cream tarts that are stunning in their simplicity and flavor.
