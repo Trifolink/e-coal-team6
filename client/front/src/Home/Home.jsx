@@ -64,7 +64,7 @@ function Home() {
                     <div key={article.id} className={styles.article}>
                         <h2>{article.title}</h2>
                         {/* <p>{article.content}</p> */}
-                        <iframe width="250" height="150" src={article.mediaURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="250" height="150" src={article.mediaURL} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullscreen></iframe>
                         <div className={styles.espace}>&nbsp;</div>
                     
                     </div>

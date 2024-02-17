@@ -27,3 +27,13 @@
 .navbug a:hover {
   background-color: #FF6B6B ;
 }
+
+
+button {
+  margin-bottom: 10px;
+  padding: 3% 10%;
+  border-radius: 20px;
+  background-color: #FF6B6B;
+  border: #FFBF5E;
+  color: white;
+}
